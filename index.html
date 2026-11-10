@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0708">
+<meta name="robots" content="noindex">
+<title>KEVIN · Kandidat Nr. 07</title>
+<meta name="description" content="Fiktives Datingprofil von KEVIN. CEO · Investor · Verführer. Nur Party-Gag, keine echte Person, keine Datensammlung.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚩</text></svg>">
+<style>
+  :root {
+    --black: #0a0708;
+    --ink: #160f12;
+    --gold: #f2c75c;
+    --gold-hi: #fff1b8;
+    --gold-lo: #a8781f;
+    --pink: #ff2d95;
+    --pink-hi: #ff8cc6;
+    --text: #fff7ea;
+    --muted: #d9c9b4;
+    --gold-grad: linear-gradient(100deg, var(--gold-lo) 0%, var(--gold) 25%, var(--gold-hi) 45%, var(--gold) 60%, var(--gold-lo) 100%);
+    --display: Impact, "Haettenschweiler", "Arial Narrow Bold", "Arial Black", sans-serif;
+    --serif: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--black);
+    color: var(--text);
+    font: 18px/1.5 var(--sans);
+    overflow-x: hidden;
+  }
+  /* Paillettenhimmel */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: -1;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(255,45,149,.35), transparent 40%),
+      radial-gradient(circle at 90% 35%, rgba(242,199,92,.18), transparent 35%),
+      radial-gradient(circle at 20% 85%, rgba(255,45,149,.25), transparent 40%),
+      radial-gradient(rgba(255,140,198,.5) 1px, transparent 1.5px) 0 0 / 22px 22px,
+      radial-gradient(rgba(242,199,92,.35) 1px, transparent 1.5px) 11px 11px / 22px 22px,
+      var(--black);
+  }
+  main { overflow-x: clip; max-width: 480px; margin: 0 auto; padding: 0 16px 48px; }
+
+  /* Laufband */
+  .ticker {
+    background: var(--pink); color: #fff; overflow: hidden; white-space: nowrap;
+    font: 700 14px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase;
+    padding: 9px 0; border-bottom: 2px solid var(--gold);
+  }
+  .ticker span { display: inline-block; padding-left: 100%; animation: ticker 18s linear infinite; }
+  @keyframes ticker { to { transform: translateX(-100%); } }
+
+  .live {
+    display: inline-flex; align-items: center; gap: 8px; margin: 20px 0 0;
+    font: 700 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold); border-radius: 99px; padding: 7px 12px;
+  }
+  .live::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .2; } }
+
+  /* Hero */
+  .hero { position: relative; text-align: center; padding: 18px 0 8px; }
+  .kicker { margin: 18px 0 0; font: 700 15px/1.3 var(--sans); letter-spacing: .3em; color: var(--pink-hi); text-transform: uppercase; }
+  h1 {
+    margin: 0; font: 400 clamp(96px, 34vw, 150px)/.9 var(--display); letter-spacing: .02em;
+    background: var(--gold-grad); background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 0 var(--pink)) drop-shadow(0 0 24px rgba(255,45,149,.55));
+    animation: shine 4s ease-in-out infinite;
+  }
+  @keyframes shine { 50% { background-position: 100% 0; } }
+  .titles { margin: 14px 0 0; font: 700 clamp(14px, 4.6vw, 18px)/1.3 var(--sans); letter-spacing: .1em; white-space: nowrap; color: var(--text); }
+  .titles b { color: var(--pink); }
+  .est { margin: 6px 0 0; font: 600 clamp(12px, 3.8vw, 14px)/1.3 var(--sans); letter-spacing: .12em; color: var(--gold); }
+
+  /* Portrait + Siegel */
+  .portrait {
+    position: relative; margin: 26px auto 0; width: min(78vw, 330px); aspect-ratio: 4 / 5;
+    border-radius: 22px; padding: 4px; background: var(--gold-grad);
+    box-shadow: 0 0 0 3px var(--black), 0 0 0 5px var(--pink), 0 20px 50px rgba(255,45,149,.35);
+  }
+  .portrait-inner {
+    height: 100%; border-radius: 18px; overflow: hidden; display: grid; place-items: center; text-align: center;
+    background:
+      repeating-conic-gradient(from 0deg, rgba(255,45,149,.95) 0 10deg, rgba(200,20,110,.95) 10deg 20deg),
+      var(--pink);
+  }
+  .portrait-inner .k {
+    font: 400 150px/1 var(--display); color: var(--black);
+    text-shadow: 3px 3px 0 var(--gold), -1px -1px 0 var(--gold-hi);
+  }
+  .portrait-inner small {
+    display: block; margin-top: 6px; padding: 6px 10px; background: var(--black); color: var(--gold);
+    font: 700 12px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; border-radius: 6px;
+  }
+  .seal {
+    position: absolute; right: -10px; top: -26px; width: clamp(104px, 34vw, 132px); aspect-ratio: 1; transform: rotate(12deg);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,.6));
+  }
+  .seal svg { width: 100%; height: 100%; animation: spin 22s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .seal .flag { position: absolute; inset: 0; display: grid; place-items: center; font-size: 40px; }
+
+  .quote {
+    margin: 34px 0 0; padding: 18px 18px 18px 22px; position: relative;
+    font: italic 700 26px/1.25 var(--serif); color: var(--text);
+    border-left: 5px solid var(--pink); background: linear-gradient(90deg, rgba(255,45,149,.18), transparent);
+  }
+  .quote::before { content: "„"; position: absolute; left: 8px; top: -26px; font-size: 64px; color: var(--gold); }
+
+  /* Karten */
+  .card {
+    margin-top: 22px; padding: 20px 18px; border-radius: 18px; background: var(--ink);
+    border: 1px solid rgba(242,199,92,.45); box-shadow: inset 0 0 0 1px rgba(255,45,149,.15);
+  }
+  .label { margin: 0 0 6px; font: 800 13px/1.2 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--pink-hi); }
+  .big { margin: 0; font: 700 23px/1.3 var(--sans); }
+  .fine { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+
+  .meter { margin-top: 16px; }
+  .meter-row { display: flex; justify-content: space-between; font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .meter-row span:last-child { color: var(--gold); font-variant-numeric: tabular-nums; }
+  .bar { height: 14px; border-radius: 99px; background: #2a1d22; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--pink), var(--gold)); transition: width 1.6s cubic-bezier(.2,.8,.2,1); }
+  .meter + .meter { margin-top: 14px; }
+
+  .qa { margin: 0; padding: 0; list-style: none; }
+  .qa li + li { margin-top: 18px; padding-top: 18px; border-top: 1px dashed rgba(242,199,92,.3); }
+  .qa p { margin: 0; font-size: 18px; }
+
+  .flags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .flags span { padding: 7px 12px; border-radius: 99px; background: #2a1016; border: 1px solid var(--pink); font-size: 15px; font-weight: 600; }
+
+  /* Buttons */
+  .actions { position: sticky; bottom: 0; margin: 28px -16px 0; padding: 14px 16px calc(14px + env(safe-area-inset-bottom)); background: linear-gradient(transparent, var(--black) 30%); }
+  .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  button {
+    appearance: none; border: 0; cursor: pointer; min-height: 60px; border-radius: 16px;
+    font: 800 18px/1.1 var(--sans); letter-spacing: .04em; text-transform: uppercase;
+    -webkit-tap-highlight-color: transparent; transition: transform .12s;
+  }
+  button:active { transform: scale(.96); }
+  button:focus-visible { outline: 3px solid var(--gold-hi); outline-offset: 3px; }
+  .btn-swipe { background: #231a1d; color: var(--text); border: 2px solid #5a4a50; }
+  .btn-match { background: var(--pink); color: #fff; box-shadow: 0 0 0 2px var(--gold), 0 8px 24px rgba(255,45,149,.5); }
+
+  .answer {
+    min-height: 0; margin: 0 0 12px; padding: 0 16px; border-radius: 14px; font-weight: 700; font-size: 17px; line-height: 1.35;
+    background: var(--gold); color: var(--black); max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s;
+  }
+  .answer.show { max-height: 200px; padding: 14px 16px; }
+  .answer.no { background: #fff7ea; }
+
+  footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: 14px; }
+  footer strong { color: var(--gold); }
+
+  .burst { position: fixed; pointer-events: none; font-size: 28px; z-index: 9; animation: fly 1.4s ease-out forwards; }
+  @keyframes fly { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before { animation: none !important; transition: none !important; }
+    .ticker span { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true"><span>★ Neuer Kandidat ★ Nur heute ★ Single-Status unbestätigt ★ Anwälte haben geprüft ★ Sakko ist echt ★ Rest unklar ★</span></div>
+<main>
+  <section class="hero">
+    <div class="live">Live · Kandidat Nr. 07</div>
+    <p class="kicker">Das ist</p>
+    <h1>KEVIN</h1>
+    <p class="titles">CEO <b>·</b> INVESTOR <b>·</b> VERFÜHRER</p>
+    <p class="est">EST. 1995 · HAMBURG / DUBAI</p>
+
+    <div class="portrait">
+      <div class="portrait-inner">
+        <div>
+          <div class="k" aria-hidden="true">K</div>
+          <small>Foto zu heiß fürs Internet</small>
+        </div>
+      </div>
+      <div class="seal" role="img" aria-label="Siegel: Offiziell zertifizierter Red Flag">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+          <circle cx="100" cy="100" r="98" fill="#f2c75c"/>
+          <circle cx="100" cy="100" r="92" fill="#0a0708"/>
+          <circle cx="100" cy="100" r="54" fill="#ff2d95"/>
+          <text font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="17" letter-spacing="1.6" fill="#f2c75c">
+            <textPath href="#ring">OFFIZIELL ZERTIFIZIERTER ★ RED FLAG ★</textPath>
+          </text>
+        </svg>
+        <span class="flag" aria-hidden="true">🚩</span>
+      </div>
+    </div>
+  </section>
+
+  <blockquote class="quote">Ich bin nicht hier, um Freunde zu finden.</blockquote>
+
+  <section class="card">
+    <p class="label">Beziehungsstatus</p>
+    <p class="big">Es ist kompliziert.</p>
+    <div class="meter">
+      <div class="meter-row"><span>Charisma</span><span>100 %</span></div>
+      <div class="bar"><i data-w="100"></i></div>
+    </div>
+    <div class="meter">
+      <div class="meter-row"><span>Bindungsangst</span><span>0 %</span></div>
+      <div class="bar"><i data-w="3"></i></div>
+    </div>
+    <p class="fine">100 % Charisma · 0 % Bindungsangst (laut eigener Aussage)</p>
+  </section>
+
+  <section class="card">
+    <p class="label" style="margin-bottom:14px">KEVIN antwortet</p>
+    <ul class="qa">
+      <li>
+        <p class="label">Mein perfekter Sonntag</p>
+        <p>Frühstück in Dubai, Abendessen in Hamburg. Dazwischen Privatjet. Oder ICE, aber mit Sonnenbrille.</p>
+      </li>
+      <li>
+        <p class="label">Meine größte Schwäche</p>
+        <p>Ich bin zu ehrlich. Und zu reich. Eins davon stimmt.</p>
+      </li>
+      <li>
+        <p class="label">Ich suche jemanden, der …</p>
+        <p>… mich so sehr liebt wie ich mich. Schwer, aber ich investiere gern in Hochrisiko.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <p class="label">Weitere Zertifikate</p>
+    <div class="flags">
+      <span>🚩 Sagt „Wir“, meint „Ich“</span>
+      <span>🚩 Sakko mit Pailletten</span>
+      <span>🚩 3 Handys</span>
+      <span>🚩 „Mein Coach sagt …“</span>
+    </div>
+  </section>
+
+  <div class="actions">
+    <p class="answer" id="answer" role="status" aria-live="polite"></p>
+    <div class="btns">
+      <button class="btn-swipe" id="swipe" type="button">✕ Weiter&shy;wischen</button>
+      <button class="btn-match" id="match" type="button">♥ Match</button>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Achtung, Satire.</strong> KEVIN ist eine frei erfundene Kunstfigur für eine Geburtstagsparty. Diese Seite speichert nichts, sendet nichts und nutzt keine Cookies.</p>
+  </footer>
+</main>
+<script>
+  const say = {
+    match: [
+      "MATCH! KEVIN hat dich gesehen. Er antwortet in 3 bis 5 Werktagen.",
+      "Mutige Entscheidung. Sein Anwalt meldet sich bei dir.",
+      "Glückwunsch, du bist jetzt Teil der Story. Staffel 2, Folge 1.",
+      "KEVIN hat zurückgematcht. Aus Versehen. Er bleibt aber dabei.",
+      "Match bestätigt. Bitte trag ab sofort Gold oder Pink in seiner Nähe."
+    ],
+    swipe: [
+      "Weiterwischen? Bei KEVIN? Das hat der Algorithmus nicht zugelassen.",
+      "Du wischst, KEVIN wischt zurück. Härter.",
+      "Falsche Richtung. Das Handy ist wohl kaputt.",
+      "Abgelehnt. KEVIN erzählt jetzt allen, er hätte Schluss gemacht.",
+      "Okay. KEVIN weint kurz in sein Sakko. Pailletten sind nicht saugfähig."
+    ]
+  };
+  const last = {};
+  function pick(kind) {
+    const list = say[kind];
+    let i;
+    do { i = Math.floor(Math.random() * list.length); } while (i === last[kind]);
+    last[kind] = i;
+    return list[i];
+  }
+  const answer = document.getElementById("answer");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function burst(btn, glyphs) {
+    if (reduce) return;
+    const r = btn.getBoundingClientRect();
+    for (let n = 0; n < 14; n++) {
+      const s = document.createElement("span");
+      s.className = "burst";
+      s.textContent = glyphs[n % glyphs.length];
+      s.style.left = r.left + r.width / 2 + "px";
+      s.style.top = r.top + "px";
+      s.style.setProperty("--dx", (Math.random() * 240 - 120) + "px");
+      s.style.setProperty("--dy", (-120 - Math.random() * 260) + "px");
+      s.style.setProperty("--r", (Math.random() * 360 - 180) + "deg");
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1500);
+    }
+  }
+  function respond(kind, btn) {
+    answer.textContent = pick(kind);
+    answer.className = "answer show" + (kind === "swipe" ? " no" : "");
+    burst(btn, kind === "match" ? ["💖", "✨", "💸", "🥂"] : ["🚩", "💔", "🙄"]);
+    if (navigator.vibrate) navigator.vibrate(kind === "match" ? [40, 40, 80] : 60);
+  }
+  document.getElementById("match").addEventListener("click", e => respond("match", e.currentTarget));
+  document.getElementById("swipe").addEventListener("click", e => respond("swipe", e.currentTarget));
+  requestAnimationFrame(() => setTimeout(() => {
+    document.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w + "%");
+  }, 300));
+</script>
+</body>
+</html>
