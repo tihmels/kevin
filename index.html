@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0708">
 <meta name="robots" content="noindex">
 <title>KEVIN · Kandidat Nr. 07</title>
-<meta name="description" content="Fiktives Datingprofil von KEVIN. CEO · Investor · Verführer. Nur Party-Gag, keine echte Person, keine Datensammlung.">
+<meta name="description" content="KEVIN. CEO · Investor · Verführer. Offiziell zertifizierter Red Flag. Jetzt matchen, solange er noch Single ist.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚩</text></svg>">
 <style>
   :root {
@@ -134,6 +134,37 @@
   .qa li + li { margin-top: 18px; padding-top: 18px; border-top: 1px dashed rgba(242,199,92,.3); }
   .qa p { margin: 0; font-size: 18px; }
 
+  /* Ego sprengt den Rahmen */
+  .bar.over { overflow: visible; }
+  .bar.over i { position: relative; }
+  .bar.over i::after { content: "💥"; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); font-size: 22px; }
+
+  /* Steckbrief */
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0 0; }
+  .facts div { padding: 12px; border-radius: 12px; background: #20161a; border: 1px solid rgba(242,199,92,.25); }
+  .facts dt { font: 800 11px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .facts dd { margin: 4px 0 0; font-weight: 700; font-size: 16px; line-height: 1.3; }
+  .facts dd small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); }
+
+  /* Portfolio */
+  .stocks { margin: 10px 0 0; padding: 0; list-style: none; }
+  .stocks li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; font-size: 16px; font-weight: 600; }
+  .stocks li + li { border-top: 1px dashed rgba(242,199,92,.3); }
+  .stocks b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .stocks .up { color: #4dff9a; }
+  .stocks .down { color: var(--pink); }
+  .stocks .gold { color: var(--gold); }
+
+  /* Bewertungen */
+  .review { margin: 0; }
+  .review + .review { margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(242,199,92,.3); }
+  .stars { color: var(--gold); letter-spacing: .15em; font-size: 18px; }
+  .stars s { color: #4a3a40; text-decoration: none; }
+  .review p { margin: 4px 0 0; font: italic 600 18px/1.35 var(--serif); }
+  .review cite { display: block; margin-top: 4px; font: 600 13px/1.3 var(--sans); font-style: normal; color: var(--muted); }
+
+  .portrait-inner { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
   .flags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .flags span { padding: 7px 12px; border-radius: 99px; background: #2a1016; border: 1px solid var(--pink); font-size: 15px; font-weight: 600; }
 
@@ -157,8 +188,6 @@
   .answer.show { max-height: 200px; padding: 14px 16px; }
   .answer.no { background: #fff7ea; }
 
-  footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: 14px; }
-  footer strong { color: var(--gold); }
 
   .burst { position: fixed; pointer-events: none; font-size: 28px; z-index: 9; animation: fly 1.4s ease-out forwards; }
   @keyframes fly { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
@@ -170,20 +199,20 @@
 </style>
 </head>
 <body>
-<div class="ticker" aria-hidden="true"><span>★ Neuer Kandidat ★ Nur heute ★ Single-Status unbestätigt ★ Anwälte haben geprüft ★ Sakko ist echt ★ Rest unklar ★</span></div>
+<div class="ticker" aria-hidden="true"><span>★ Neuer Kandidat ★ Nur heute ★ Single-Status unbestätigt ★ Anwälte haben geprüft ★ Sakko ist echt ★ Rest unklar ★ Breaking: KEVIN hat zum 4. Mal „ein Startup gegründet“ ★ Mama sagt, er ist ein Guter ★ Jetzt mit 0 % Finanzierung ★</span></div>
 <main>
   <section class="hero">
-    <div class="live">Live · Kandidat Nr. 07</div>
+    <div class="live" id="live">Live · Kandidat Nr. 07</div>
     <p class="kicker">Das ist</p>
     <h1>KEVIN</h1>
     <p class="titles">CEO <b>·</b> INVESTOR <b>·</b> VERFÜHRER</p>
     <p class="est">EST. 1995 · HAMBURG / DUBAI</p>
 
     <div class="portrait">
-      <div class="portrait-inner">
+      <div class="portrait-inner" id="portrait" role="button" tabindex="0" aria-label="Foto laden">
         <div>
           <div class="k" aria-hidden="true">K</div>
-          <small>Foto zu heiß fürs Internet</small>
+          <small id="caption">Foto zu heiß fürs Internet</small>
         </div>
       </div>
       <div class="seal" role="img" aria-label="Siegel: Offiziell zertifizierter Red Flag">
@@ -214,7 +243,23 @@
       <div class="meter-row"><span>Bindungsangst</span><span>0 %</span></div>
       <div class="bar"><i data-w="3"></i></div>
     </div>
-    <p class="fine">100 % Charisma · 0 % Bindungsangst (laut eigener Aussage)</p>
+    <div class="meter">
+      <div class="meter-row"><span>Ego</span><span>140 %</span></div>
+      <div class="bar over"><i data-w="103"></i></div>
+    </div>
+    <p class="fine">100 % Charisma · 0 % Bindungsangst (laut eigener Aussage) · Ego-Wert technisch nicht messbar</p>
+  </section>
+
+  <section class="card">
+    <p class="label">Steckbrief</p>
+    <dl class="facts">
+      <div><dt>Größe</dt><dd>1,85 m<small>mit Schuhen. Und Föhnfrisur.</small></dd></div>
+      <div><dt>Sternzeichen</dt><dd>Löwe<small>Aszendent: Leasingvertrag</small></dd></div>
+      <div><dt>Auto</dt><dd>Porsche<small>Carsharing, 19 Min.</small></dd></div>
+      <div><dt>Wohnsitz</dt><dd>Penthouse<small>bei Mama, oberster Stock</small></dd></div>
+      <div><dt>Sprachen</dt><dd>Deutsch, Englisch<small>und fließend LinkedIn</small></dd></div>
+      <div><dt>Gemeinsame Freunde</dt><dd>0<small>gemeinsame Exen: 3</small></dd></div>
+    </dl>
   </section>
 
   <section class="card">
@@ -236,12 +281,47 @@
   </section>
 
   <section class="card">
+    <p class="label">KEVINs Portfolio</p>
+    <ul class="stocks">
+      <li><span>🪙 $KEVCOIN (eigene Währung)</span><b class="down">−98 %</b></li>
+      <li><span>🐒 NFT: Affe mit Sonnenbrille</span><b class="down">−100 %</b></li>
+      <li><span>🥙 12 % an einem Dönerladen</span><b class="up">+400 %</b></li>
+      <li><span>📈 Online-Kurs „Alpha-Mindset“</span><b class="up">3 Käufer</b></li>
+      <li><span>✨ Eigene Ausstrahlung</span><b class="gold">unbezahlbar</b></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <p class="label">Bewertungen</p>
+    <div class="review">
+      <span class="stars" aria-label="1 von 5 Sternen">★<s>★★★★</s></span>
+      <p>„Hat beim ersten Date sechs Stunden über Krypto geredet. Die Rechnung hab ich bezahlt.“</p>
+      <cite>— Verifizierte Ex, Eppendorf</cite>
+    </div>
+    <div class="review">
+      <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+      <p>„Der beste Mann, den ich kenne. Isst immer brav auf.“</p>
+      <cite>— Mama</cite>
+    </div>
+    <div class="review">
+      <span class="stars" aria-label="2 von 5 Sternen">★★<s>★★★</s></span>
+      <p>„Hat mir zum Jahrestag eine Sprachnachricht geschickt. Elf Minuten. Über sich.“</p>
+      <cite>— Anonym, will nicht drüber reden</cite>
+    </div>
+  </section>
+
+  <section class="card">
     <p class="label">Weitere Zertifikate</p>
     <div class="flags">
       <span>🚩 Sagt „Wir“, meint „Ich“</span>
       <span>🚩 Sakko mit Pailletten</span>
       <span>🚩 3 Handys</span>
       <span>🚩 „Mein Coach sagt …“</span>
+      <span>🚩 Sonnenbrille nachts</span>
+      <span>🚩 Fitnessstudio-Selfie als Profilbild</span>
+      <span>🚩 Nennt sich selbst „Visionär“</span>
+      <span>🚩 Antwortet nur mit Sprachnachrichten</span>
+      <span>🚩 Hat ein Gym-Abo, war nie da</span>
     </div>
   </section>
 
@@ -253,9 +333,6 @@
     </div>
   </div>
 
-  <footer>
-    <p><strong>Achtung, Satire.</strong> KEVIN ist eine frei erfundene Kunstfigur für eine Geburtstagsparty. Diese Seite speichert nichts, sendet nichts und nutzt keine Cookies.</p>
-  </footer>
 </main>
 <script>
   const say = {
@@ -264,16 +341,24 @@
       "Mutige Entscheidung. Sein Anwalt meldet sich bei dir.",
       "Glückwunsch, du bist jetzt Teil der Story. Staffel 2, Folge 1.",
       "KEVIN hat zurückgematcht. Aus Versehen. Er bleibt aber dabei.",
-      "Match bestätigt. Bitte trag ab sofort Gold oder Pink in seiner Nähe."
+      "Match bestätigt. Bitte trag ab sofort Gold oder Pink in seiner Nähe.",
+      "MATCH! KEVIN schickt dir gleich eine Sprachnachricht. Plan 9 Minuten ein.",
+      "Herzlichen Glückwunsch. Du darfst jetzt in $KEVCOIN investieren.",
+      "Match! Seine Mama wurde bereits informiert."
     ],
     swipe: [
       "Weiterwischen? Bei KEVIN? Das hat der Algorithmus nicht zugelassen.",
       "Du wischst, KEVIN wischt zurück. Härter.",
       "Falsche Richtung. Das Handy ist wohl kaputt.",
       "Abgelehnt. KEVIN erzählt jetzt allen, er hätte Schluss gemacht.",
-      "Okay. KEVIN weint kurz in sein Sakko. Pailletten sind nicht saugfähig."
+      "Okay. KEVIN weint kurz in sein Sakko. Pailletten sind nicht saugfähig.",
+      "KEVIN hat dich gerade auf LinkedIn blockiert.",
+      "Interessant. KEVIN postet gleich ein Zitat über „Neider“."
     ]
   };
+  // Je öfter man wischt, desto verzweifelter der Button
+  const swipeLabels = ["✕ Weiter&shy;wischen", "✕ Wirklich?", "✕ Ganz sicher?", "✕ Er hat Geld!", "✕ Bitte nicht", "♥ Na gut, Match"];
+  let swipes = 0;
   const last = {};
   function pick(kind) {
     const list = say[kind];
@@ -301,6 +386,15 @@
     }
   }
   function respond(kind, btn) {
+    if (kind === "swipe") {
+      swipes++;
+      // Letzte Stufe: der Wisch-Button ist kapituliert und matcht selbst
+      if (swipes >= swipeLabels.length) {
+        kind = "match";
+        swipes = 0;
+      }
+      btn.innerHTML = swipeLabels[swipes] || swipeLabels[0];
+    }
     answer.textContent = pick(kind);
     answer.className = "answer show" + (kind === "swipe" ? " no" : "");
     burst(btn, kind === "match" ? ["💖", "✨", "💸", "🥂"] : ["🚩", "💔", "🙄"]);
@@ -308,6 +402,26 @@
   }
   document.getElementById("match").addEventListener("click", e => respond("match", e.currentTarget));
   document.getElementById("swipe").addEventListener("click", e => respond("swipe", e.currentTarget));
+
+  // Live-Badge: KEVIN ist immer irgendwie gerade aktiv
+  const live = document.getElementById("live");
+  const status = ["Live · Kandidat Nr. 07", "Gerade online", "0,3 km entfernt", "Tippt …", "Löscht wieder", "Sprachnachricht …"];
+  let s = 0;
+  if (!reduce) setInterval(() => { live.textContent = status[s = (s + 1) % status.length]; }, 2600);
+
+  // Foto-Easteregg: Tippen aufs Porträt
+  const portrait = document.getElementById("portrait");
+  const caption = document.getElementById("caption");
+  const captions = ["Foto zu heiß fürs Internet", "Foto lädt … 3 %", "Foto lädt … 4 %", "Abgebrochen. Zu viel Aura.", "Nur für Premium-Mitglieder", "Hat er selbst gelöscht. Licht war schlecht."];
+  let c = 0;
+  function nextCaption() {
+    caption.textContent = captions[c = (c + 1) % captions.length];
+  }
+  portrait.addEventListener("click", nextCaption);
+  portrait.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); nextCaption(); }
+  });
+
   requestAnimationFrame(() => setTimeout(() => {
     document.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w + "%");
   }, 300));
